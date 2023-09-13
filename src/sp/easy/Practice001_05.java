@@ -25,8 +25,9 @@ public class Practice001_05 {
             argsList.add(args[i]);
         }
         System.out.print("\r\n");
-
-        // TODO
         
+        System.out.println("実行後");
+        String res = argsList.get(0).replaceAll(" ", "%20");
+        System.out.println(res);
     }
 }

@@ -1,4 +1,4 @@
-package sp;
+package sp.easy;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,15 +46,17 @@ public class Practice001_06 {
     public void try02(String[] head) throws Exception {
         System.out.println("Run Practice001_06.try02 ");
 
+        System.out.println("実行前");
         ArrayList<String> headList = new ArrayList<>();
         for(int i = 0; i < head.length; i++) {
 
-            System.out.println(head[i]);
+            System.out.print(head[i] + ",");
             headList.add(head[i]);
         }
+        System.out.print("\r\n");
 
         Collections.reverse(headList);
-        System.out.println("・ 実行後");
+        System.out.println("実行後");
         System.out.println(headList);
     }
 
