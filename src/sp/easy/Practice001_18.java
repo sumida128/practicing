@@ -52,6 +52,7 @@ public class Practice001_18 {
 
             System.out.print(headListGlobal.get(i) + ",");
         }
+        System.out.print("\r\n");
     }
     
 }
