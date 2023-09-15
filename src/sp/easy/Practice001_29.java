@@ -17,8 +17,11 @@ public class Practice001_29 {
     // グローバル変数 global variable
     private ArrayList<String> headListGlobal = new ArrayList<>();
 
-    public Practice001_29(int[] head, String val) {
+    public Practice001_29() {
         System.out.println("Run Practice001_29. ");
+
+        int[] head = {1,2};
+        String val = "";
 
         System.out.println("実行前");
         System.out.print("▲head = ");
@@ -54,7 +57,64 @@ public class Practice001_29 {
     /*
      * ArrayList<String>.remove を利用する
      */
-    public void spiralOrder_try01(int[] args, String val) throws Exception {
+    public int[] spiralOrder_try01(int[][] matrix ) throws Exception {
+
+
+        if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
+            return null;
+        }
+
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int[] result = new int[row * col];
+        int index = 0;
+
+        int pointerX = 0;
+        int pointerY = 0;
+        int max = 0;
+
+        while(true){
+
+            for (pointerY = 0; pointerY < col ;pointerY++){
+
+                result[index++] = matrix[pointerX][pointerY];
+                System.out.println(matrix[pointerX][pointerY]);
+                max++;
+            }
+            pointerY--;
+            pointerX++;
+
+            for(int x = pointerX ; x < row ;x++) {
+
+                result[index++] = matrix[x][pointerY];
+                System.out.println(matrix[x][pointerY]);
+                pointerX++;
+            }
+            // pointerX--;
+
+            for(int p = pointerY ;p >= 0 ; p-- ) {
+
+                result[index++] = matrix[pointerX][p];
+                System.out.println(matrix[pointerX][p]);
+            }
+
+            for(int p1 = pointerX ;p1 <= max ; p1-- ) {
+
+                result[index++] = matrix[p1][pointerY];
+            }
+            break;
+
+        }
+
+        return result;
+    }
+    
+
+    
+    /*
+     * ArrayList<String>.remove を利用する
+     */
+    public void spiralOrder_try02(int[] args, String val) throws Exception {
 
         for(int i = 0; i < headListGlobal.size(); i++) {
 
@@ -71,5 +131,4 @@ public class Practice001_29 {
             System.out.print(headListGlobal.get(i) + ",");
         }
     }
-    
 }

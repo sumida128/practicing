@@ -3,6 +3,7 @@ import sp.easy.Practice001_09;
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
+import sp.easy.Practice001_29;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -23,8 +24,8 @@ public class App {
          * input : [2, 3, 1, 0, 2, 5, 3]
          * output : 2 or 3  
          */
-        Practice001_03 practice001_03 = new Practice001_03();
-        practice001_03.findRepeatNumber_try01(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
+        // Practice001_03 practice001_03 = new Practice001_03();
+        // practice001_03.findRepeatNumber_try01(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
 
 
         /*
@@ -78,6 +79,19 @@ public class App {
         //     new String[]{"CQueue","appendTail","deleteHead","deleteHead","deleteHead"},
         //     new String[]{null,"3",null,null,null});
 
+                /*
+         * Two Pointers
+         * Offer 09.two 
+         * 
+         * Ex.1
+         * input : ["CQueue","appendTail","deleteHead","deleteHead","deleteHead"]
+         *         [[],[3],[],[],[]]
+         * output : [null,null,3,-1,-1]
+         */
+        Practice001_29 practice001_29 =  new Practice001_29();
+        int[] result = practice001_29.spiralOrder_try01(
+            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+            System.out.println(result);
 
     }
 }
