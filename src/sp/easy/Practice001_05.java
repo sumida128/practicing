@@ -11,6 +11,7 @@ import java.util.ArrayList;
  */
 public class Practice001_05 {
 
+    // TODO
     /*
      * String.replaceAll を利用する
      */
