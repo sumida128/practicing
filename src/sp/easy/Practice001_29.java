@@ -20,18 +20,18 @@ public class Practice001_29 {
     public Practice001_29() {
         System.out.println("Run Practice001_29. ");
 
-        int[] head = {1,2};
-        String val = "";
+        // int[] head = {1,2};
+        // String val = "";
 
-        System.out.println("実行前");
-        System.out.print("▲head = ");
-        for(int i = 0; i < head.length; i++) {
+        // System.out.println("実行前");
+        // System.out.print("▲head = ");
+        // for(int i = 0; i < head.length; i++) {
 
-            System.out.print(head[i] + ",");
-            headListGlobal.add( String.valueOf(head[i]));
-        }
-        System.out.print("  \u25B2");
-        System.out.println("val = " + val);
+        //     System.out.print(head[i] + ",");
+        //     headListGlobal.add( String.valueOf(head[i]));
+        // }
+        // System.out.print("  \u25B2");
+        // System.out.println("val = " + val);
     }
 
     public void runBefore(String[] param_1, String[] param_2) {
@@ -55,7 +55,7 @@ public class Practice001_29 {
 	}
 
     /*
-     * ArrayList<String>.remove を利用する
+     * 
      */
     public int[] spiralOrder_try01(int[][] matrix ) throws Exception {
 
@@ -64,9 +64,26 @@ public class Practice001_29 {
             return null;
         }
 
+        // 範囲設定（面積）
         int row = matrix.length;
         int col = matrix[0].length;
         int[] result = new int[row * col];
+
+        // 限界設定
+        int left = 0;
+        int right = col - 1;
+        int top = 0;
+        int bottom = row -1;
+        /**
+         * 
+         * ------
+         * |    |
+         * |    |
+         * |    |
+         * ------
+         */
+
+
         int index = 0;
 
         int pointerX = 0;
@@ -108,27 +125,93 @@ public class Practice001_29 {
 
         return result;
     }
-    
 
-    
-    /*
-     * ArrayList<String>.remove を利用する
+    /**
+     * 
+     * @param matrix
+     * @return
+     * @throws Exception
      */
-    public void spiralOrder_try02(int[] args, String val) throws Exception {
+    public int[] spiralOrder_try02(int[][] matrix ) throws Exception {
 
-        for(int i = 0; i < headListGlobal.size(); i++) {
 
-            if (headListGlobal.get(i).equals(val)) {
+        if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
+            return null;
+        }
 
-                headListGlobal.remove(i);
-                i = i - 1;
+        // 範囲設定（面積）
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int[] result = new int[row * col];
+
+        /**
+         *         top = 0
+         *         ------
+         *         |    |
+         *  left   |    |  right
+         *         |    |
+         *         ------
+         *         bottom
+         */
+        // 限界設定
+        int left = 0;
+        int right = col - 1;
+        int top = 0;
+        int bottom = row - 1;
+
+        // 返却配列のポインター
+        int index = 0;
+
+        while(true){
+
+            //最初の一行目、方向は「→」
+            for (int i = left; i<= right; i++) {
+
+                result[index++] = matrix[top][i];
+                System.out.print(matrix[top][i] + ",");
             }
+            //範囲を収束（縮小）
+            top++; // ++topを使えば、171行省略
+            if (top > bottom) {
+                break;
+            }
+
+
+            //方向を変える「↓」
+            for(int i = top; i <= bottom; i++) {
+
+                result[index++] = matrix[i][right];
+                System.out.print(matrix[i][right] + ",");
+            }
+            //範囲を収束（縮小）
+            if (--right < left) {
+                break;
+            }
+
+            //方向を変える「←」
+            for(int i = right ; i >= left ; i-- ) {
+
+                result[index++] = matrix[bottom][i];
+                System.out.print(matrix[bottom][i] + ",");
+            }
+            //範囲を収束（縮小）
+            if (--bottom < top) {
+                break;
+            }
+
+            //方向を変える「↑」
+            for(int i = bottom; i >= top ; i-- ) {
+
+                result[index++] = matrix[i][left];
+                System.out.print(matrix[i][left] + ",");
+            }
+            //範囲を収束（縮小）
+            if (++left < right) {
+                break;
+            }
+
         }
 
-        System.out.println("実行後");
-        for(int i = 0; i < headListGlobal.size(); i++) {
-
-            System.out.print(headListGlobal.get(i) + ",");
-        }
+        return result;
     }
 }

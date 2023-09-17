@@ -1,5 +1,8 @@
 import sp.easy.Practice001_06;
 import sp.easy.Practice001_09;
+
+import java.util.Arrays;
+
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
@@ -13,6 +16,31 @@ public class App {
 
             args = new String[]{"",""};
         }
+
+        /*
+         * matrix_2 spiralOrder
+         * Offer 29. 
+         * 
+         * Ex.1
+         * input : new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+         * output : [1, 2, 3, 6, 9, 8, 7, 4, 5]
+         */
+        Practice001_29 practice001_29 =  new Practice001_29();
+        int[] result = practice001_29.spiralOrder_try02(
+            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+        int[] ans = new int[]{1, 2, 3, 6, 9, 8, 7, 4, 5};
+        System.out.println(Arrays.equals(result, ans) ? "true" : "false");
+
+        /**
+         * input : new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}}
+         * output : [1, 2, 3, 6, 9, 8, 7, 4, 5]
+         */
+        result = practice001_29.spiralOrder_try02(
+            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}});
+        ans = new int[]{1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8};
+        System.out.println(Arrays.equals(result, ans) ? "true" : "false");
+
+        
 
         // https://leetcode.cn/studyplan/coding-interviews/
 
@@ -79,19 +107,6 @@ public class App {
         //     new String[]{"CQueue","appendTail","deleteHead","deleteHead","deleteHead"},
         //     new String[]{null,"3",null,null,null});
 
-                /*
-         * Two Pointers
-         * Offer 09.two 
-         * 
-         * Ex.1
-         * input : ["CQueue","appendTail","deleteHead","deleteHead","deleteHead"]
-         *         [[],[3],[],[],[]]
-         * output : [null,null,3,-1,-1]
-         */
-        Practice001_29 practice001_29 =  new Practice001_29();
-        int[] result = practice001_29.spiralOrder_try01(
-            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-            System.out.println(result);
 
     }
 }
