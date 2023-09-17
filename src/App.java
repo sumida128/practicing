@@ -1,13 +1,24 @@
 import sp.easy.Practice001_06;
 import sp.easy.Practice001_09;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
 import sp.easy.Practice001_29;
+import sp.easy.Practice001_32;
 
+/**
+ * https://leetcode.cn/studyplan/coding-interviews/
+ */
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("To start practice. ");
@@ -18,6 +29,46 @@ public class App {
         }
 
         /*
+         * levelOrder
+         * Offer 32. 
+         * 
+         * Ex.1
+         * input : TreeNode root {[3,9,20,null,null,15,7]}
+         * output : [[3],[9,20],[15,7]]
+         */
+        Practice001_32 practice001_32 =  new Practice001_32();
+        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
+        DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
+        DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch20");
+        DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf15");
+        DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
+        DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
+        rootNode.add(rootNode9);
+        rootNode.add(rootNode20);
+
+        rootNode20.add(rootNode15);
+        rootNode20.add(rootNode7);
+        rootNode20.add(rootNode8);
+
+        // 
+        DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
+        JTree jjj = new JTree(model);
+        // System.out.println(rootNode.toString());
+        // System.out.println(jjj.getModel().toString());
+        List<List<String>> result32 = practice001_32.levelOrder_try01(
+            rootNode);
+        List<List<String>> ans32 = new ArrayList<List<String>>();
+        System.out.println(result32.equals(ans32) ? "true" : "false");
+
+        for (List<String> lstr: result32) {
+            System.out.print( "[");
+            for (String str : lstr) {
+                System.out.print( str + ",");
+            }
+            System.out.println( "]");
+        }
+
+        /*
          * matrix_2 spiralOrder
          * Offer 29. 
          * 
@@ -25,24 +76,20 @@ public class App {
          * input : new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
          * output : [1, 2, 3, 6, 9, 8, 7, 4, 5]
          */
-        Practice001_29 practice001_29 =  new Practice001_29();
-        int[] result = practice001_29.spiralOrder_try02(
-            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-        int[] ans = new int[]{1, 2, 3, 6, 9, 8, 7, 4, 5};
-        System.out.println(Arrays.equals(result, ans) ? "true" : "false");
+        // Practice001_29 practice001_29 =  new Practice001_29();
+        // int[] result = practice001_29.spiralOrder_try02(
+        //     new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+        // int[] ans = new int[]{1, 2, 3, 6, 9, 8, 7, 4, 5};
+        // System.out.println(Arrays.equals(result, ans) ? "true" : "false");
 
         /**
          * input : new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}}
          * output : [1, 2, 3, 6, 9, 8, 7, 4, 5]
          */
-        result = practice001_29.spiralOrder_try02(
-            new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}});
-        ans = new int[]{1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8};
-        System.out.println(Arrays.equals(result, ans) ? "true" : "false");
-
-        
-
-        // https://leetcode.cn/studyplan/coding-interviews/
+        // result = practice001_29.spiralOrder_try02(
+        //     new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}});
+        // ans = new int[]{1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8};
+        // System.out.println(Arrays.equals(result, ans) ? "true" : "false");
 
         /*
          * String
