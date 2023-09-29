@@ -1,6 +1,6 @@
 package sp.easy;
 
-import java.util.ArrayList;
+// メモ sht + alt + o import成形
 
 /*
  * 剑指 Offer 29. 顺时针打印矩阵 spiralOrder
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Practice001_29 {
 
     // グローバル変数 global variable
-    private ArrayList<String> headListGlobal = new ArrayList<>();
+    // private ArrayList<String> headListGlobal = new ArrayList<>();
 
     public Practice001_29() {
         System.out.println("Run Practice001_29. ");
@@ -55,7 +55,7 @@ public class Practice001_29 {
 	}
 
     /*
-     * 
+     * 失敗
      */
     public int[] spiralOrder_try01(int[][] matrix ) throws Exception {
 
@@ -74,6 +74,9 @@ public class Practice001_29 {
         int right = col - 1;
         int top = 0;
         int bottom = row -1;
+        System.out.println("left + right +  top + bottom");
+        System.out.println(left + "," + right + "," + top + "," + bottom);
+
         /**
          * 
          * ------

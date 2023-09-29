@@ -1,15 +1,16 @@
-package sp.easy;
+package leetCode75.easy;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.List;
 
 import javax.swing.tree.TreeNode;
 
 /*
- * 剑指 Offer 32 - II. 从上到下打印二叉树 II Solution
- *  从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+ * LeetCode 75 104. 二叉树的最大深度
+ *  二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。
  *  
  * 示例 1：
  * 输入: 给定二叉树: [3,9,20,null,null,15,7]
@@ -18,37 +19,37 @@ import javax.swing.tree.TreeNode;
  *       9  20
  *         /  \
  *        15   7
- * 输出: 返回其层次遍历结果：
- *       [
- *        [3],
- *        [9,20],
- *        [15,7]
- *       ]
+ * 输出: 3 （最长路径上的节点数）
  */
-public class Practice001_32 {
+public class Practice001_104 {
 
     // グローバル変数 global variable
     // private ArrayList<String> headListGlobal = new ArrayList<>();
 
-    public Practice001_32() {
-        System.out.println("Run Practice001_29. ");
+    public Practice001_104() {
+        System.out.println("Run Practice001_104. ");
     }
 
     public void runBefore(String[] param_1, String[] param_2) {
-		System.out.println("Run Practice001_32.");
+		System.out.println("Run Practice001_104.");
 	}
 
     /*
      * 
      */
-    public List<List<String>> levelOrder_try01(TreeNode root) throws Exception {
+    public List<List<String>> maxDepth_104_try01(TreeNode root) throws Exception {
 
         //初期化
         Deque<TreeNode> dequeTreeNode = new ArrayDeque<>();
         List<List<String>> result = new ArrayList<List<String>>();
+
         if (null != root) {
             dequeTreeNode.addLast(root);
         } else {
+            String str = "emtry";
+            List<String> resultList = new ArrayList<String>(Arrays.asList(str));
+            // result = new ArrayList<List<String>>(Arrays.asList(resultList));
+            result.add(resultList);
             return result;
         }
 
@@ -97,17 +98,24 @@ public class Practice001_32 {
      * @return
      * @throws Exception
      */
-    public int[] levelOrder_try02(int[][] matrix ) throws Exception {
+    public int maxDepth_104_try02(TreeNode root ) throws Exception {
 
-        if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
-            return null;
+        // 入力確認、最後leafなら、「1」を返却
+        if (null == root) {
+            return 0;
+        } 
+        
+        //今のブランチを確認
+        System.out.println("今のブランチ" + root.toString());
+        if (root.isLeaf()) {
+            return 1;
         }
 
-        // 範囲設定（面積）
-        int row = matrix.length;
-        int col = matrix[0].length;
-        int[] result = new int[row * col];
-
-        return result;
+        // 大きい方を取得
+        return Math.max(
+            maxDepth_104_try02(
+                root.getChildAt(0)), 
+            maxDepth_104_try02(
+                root.getChildAt(1))) + 1;
     }
 }

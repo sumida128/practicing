@@ -10,6 +10,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
+import leetCode75.easy.Practice001_104;
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
@@ -24,9 +25,82 @@ public class App {
         System.out.println("To start practice. ");
 
         if (args.length == 0) {
-
             args = new String[]{"",""};
         }
+
+        
+        /**
+         * String
+         * Offer 03.find Repeat Number
+         * 
+         * Ex.1  
+         * input : [2, 3, 1, 0, 2, 5, 3]
+         * output : 2 or 3  
+         */
+        Practice001_104 Practice001_104 = new Practice001_104();
+        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
+        DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
+        DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch2");
+        DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf1");
+        DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
+        DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
+        DefaultMutableTreeNode rootNode8_1 = new DefaultMutableTreeNode("leaf8_1");
+
+        rootNode.add(rootNode9);
+        rootNode.add(rootNode20);
+
+        rootNode20.add(rootNode15);
+        rootNode20.add(rootNode7);
+        rootNode7.add(rootNode8);
+        rootNode7.add(rootNode8_1);
+        // List<List<String>> result_lc75_104 = Practice001_104.maxDepth_104_try01(rootNode);
+        int result_lc75_104_2 = Practice001_104.maxDepth_104_try02(rootNode);
+        System.out.println(result_lc75_104_2 != 0 ? "true: " + result_lc75_104_2 : "false");
+        // 結果確認
+        // for (List<String> lstr: result_lc75_104) {
+        //     System.out.print( "[");
+        //     for (String str : lstr) {
+        //         System.out.print( str + ",");
+        //     }
+        //     System.out.println( "]");
+        // }
+
+        // TODO
+        // // 
+        // DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
+        // JTree jjj = new JTree(model);
+        // // System.out.println(rootNode.toString());
+        // // System.out.println(jjj.getModel().toString());
+        // List<List<String>> result32 = practice001_32.levelOrder_try01(
+        //     rootNode);
+        // List<List<String>> ans32 = new ArrayList<List<String>>();
+        // System.out.println(result32.equals(ans32) ? "true" : "false");
+
+        // for (List<String> lstr: result32) {
+        //     System.out.print( "[");
+        //     for (String str : lstr) {
+        //         System.out.print( str + ",");
+        //     }
+        //     System.out.println( "]");
+        // }
+
+        // TODO
+
+        /**
+         * String
+         * Offer 03.find Repeat Number
+         * 
+         * Ex.1  
+         * input : [2, 3, 1, 0, 2, 5, 3]
+         * output : 2 or 3  
+         */
+        // Practice001_03 practice001_03 = new Practice001_03();
+        // practice001_03.findRepeatNumber_try01(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
+        // practice001_03.findRepeatNumber_try02(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
+        // practice001_03.findRepeatNumber_try02(new int[]{2, 3, 5, 1, 0, 5, 4});
+        // TODO 配列のプリンターのメモがあります
+        // practice001_03.findRepeatNumber_try03(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
+
 
         /*
          * levelOrder
@@ -36,37 +110,37 @@ public class App {
          * input : TreeNode root {[3,9,20,null,null,15,7]}
          * output : [[3],[9,20],[15,7]]
          */
-        Practice001_32 practice001_32 =  new Practice001_32();
-        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
-        DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
-        DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch20");
-        DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf15");
-        DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
-        DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
-        rootNode.add(rootNode9);
-        rootNode.add(rootNode20);
+        // Practice001_32 practice001_32 =  new Practice001_32();
+        // DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
+        // DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
+        // DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch20");
+        // DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf15");
+        // DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
+        // DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
+        // rootNode.add(rootNode9);
+        // rootNode.add(rootNode20);
 
-        rootNode20.add(rootNode15);
-        rootNode20.add(rootNode7);
-        rootNode20.add(rootNode8);
+        // rootNode20.add(rootNode15);
+        // rootNode20.add(rootNode7);
+        // rootNode20.add(rootNode8);
 
-        // 
-        DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
-        JTree jjj = new JTree(model);
-        // System.out.println(rootNode.toString());
-        // System.out.println(jjj.getModel().toString());
-        List<List<String>> result32 = practice001_32.levelOrder_try01(
-            rootNode);
-        List<List<String>> ans32 = new ArrayList<List<String>>();
-        System.out.println(result32.equals(ans32) ? "true" : "false");
+        // // 
+        // DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
+        // JTree jjj = new JTree(model);
+        // // System.out.println(rootNode.toString());
+        // // System.out.println(jjj.getModel().toString());
+        // List<List<String>> result32 = practice001_32.levelOrder_try01(
+        //     rootNode);
+        // List<List<String>> ans32 = new ArrayList<List<String>>();
+        // System.out.println(result32.equals(ans32) ? "true" : "false");
 
-        for (List<String> lstr: result32) {
-            System.out.print( "[");
-            for (String str : lstr) {
-                System.out.print( str + ",");
-            }
-            System.out.println( "]");
-        }
+        // for (List<String> lstr: result32) {
+        //     System.out.print( "[");
+        //     for (String str : lstr) {
+        //         System.out.print( str + ",");
+        //     }
+        //     System.out.println( "]");
+        // }
 
         /*
          * matrix_2 spiralOrder
@@ -90,17 +164,6 @@ public class App {
         //     new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9},{10, 11, 12}});
         // ans = new int[]{1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8};
         // System.out.println(Arrays.equals(result, ans) ? "true" : "false");
-
-        /*
-         * String
-         * Offer 03.find Repeat Number
-         * 
-         * Ex.1  
-         * input : [2, 3, 1, 0, 2, 5, 3]
-         * output : 2 or 3  
-         */
-        // Practice001_03 practice001_03 = new Practice001_03();
-        // practice001_03.findRepeatNumber_try01(new int[]{2, 3, 1, 0, 2, 5, 3, 2});
 
 
         /*
