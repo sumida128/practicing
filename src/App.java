@@ -30,12 +30,19 @@ public class App {
 
         
         /**
-         * String
-         * Offer 03.find Repeat Number
+         * Binary Tree-DFS
+         * 104. Maximum Depth of Binary Tree. 
+         * Given the root of a binary tree, return its maximum depth.
+         * A binary tree's maximum depth is the number of nodes along the longest path from the
+         * root node down to the farthest leaf node.
          * 
          * Ex.1  
          * input : [2, 3, 1, 0, 2, 5, 3]
-         * output : 2 or 3  
+         * output : 3
+         * 
+         * Ex.2
+         * input : [1,null,2]
+         * output : 2
          */
         Practice001_104 Practice001_104 = new Practice001_104();
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
@@ -51,22 +58,14 @@ public class App {
 
         rootNode20.add(rootNode15);
         rootNode20.add(rootNode7);
-        rootNode7.add(rootNode8);
-        rootNode7.add(rootNode8_1);
+        // rootNode7.add(rootNode8);
+        // rootNode7.add(rootNode8_1);
         // List<List<String>> result_lc75_104 = Practice001_104.maxDepth_104_try01(rootNode);
         int result_lc75_104_2 = Practice001_104.maxDepth_104_try02(rootNode);
-        System.out.println(result_lc75_104_2 != 0 ? "true: " + result_lc75_104_2 : "false");
         // 結果確認
-        // for (List<String> lstr: result_lc75_104) {
-        //     System.out.print( "[");
-        //     for (String str : lstr) {
-        //         System.out.print( str + ",");
-        //     }
-        //     System.out.println( "]");
-        // }
+        System.out.println(result_lc75_104_2 != 0 ? "true: " + result_lc75_104_2 : "false");
 
-        // TODO
-        // // 
+        // TODO 後回し
         // DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
         // JTree jjj = new JTree(model);
         // // System.out.println(rootNode.toString());
@@ -83,7 +82,6 @@ public class App {
         //     }
         //     System.out.println( "]");
         // }
-
         // TODO
 
         /**

@@ -14,11 +14,11 @@ import javax.swing.tree.TreeNode;
  *  
  * 示例 1：
  * 输入: 给定二叉树: [3,9,20,null,null,15,7]
- *         3
+ *         3        1 depth
  *        / \
- *       9  20
+ *       9  20      2 depth
  *         /  \
- *        15   7
+ *        15   7    3 depth
  * 输出: 3 （最长路径上的节点数）
  */
 public class Practice001_104 {
@@ -35,7 +35,7 @@ public class Practice001_104 {
 	}
 
     /*
-     * 
+     * 修正していない
      */
     public List<List<String>> maxDepth_104_try01(TreeNode root) throws Exception {
 
@@ -93,6 +93,7 @@ public class Practice001_104 {
     }
 
     /**
+     * Recursionを使う
      * 
      * @param matrix
      * @return
