@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
 import leetCode75.easy.Practice001_104;
+import leetCode75.easy.Practice001_700;
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
@@ -28,7 +29,47 @@ public class App {
             args = new String[]{"",""};
         }
 
+
+        /**
+         * Binary Tree-DFS
+         * Leet Code 700. Search in a Binary Search Tree 
+         * You are given the root of a binary search tree (BST) and an integer val.
+         * Find the node in the BST that the node's value equals val and
+         * return the subtree rooted with that node. If such a node does not exist, return null.
+         * 
+         * Ex.1  
+         * input :  root = [4,2,7,1,3], val = 2
+         * output : [2,1,3]
+         * 
+         * Ex.2
+         * input : root = [4,2,7,1,3], val = 5
+         * output : []
+         */
         
+        Practice001_700 practice001_700 = new Practice001_700();
+        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root4");
+        DefaultMutableTreeNode branchNode2 = new DefaultMutableTreeNode("branch2");
+        DefaultMutableTreeNode branchNode7 = new DefaultMutableTreeNode("branch7");
+        //TODO
+        DefaultMutableTreeNode leafNode1 = new DefaultMutableTreeNode("leaf1");
+        DefaultMutableTreeNode leafNode3 = new DefaultMutableTreeNode("leaf3");
+        // DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
+        // DefaultMutableTreeNode rootNode8_1 = new DefaultMutableTreeNode("leaf8_1");
+
+        rootNode.add(branchNode2);
+        rootNode.add(branchNode7);
+
+        branchNode2.add(leafNode1);
+        branchNode2.add(leafNode3);
+        // rootNode7.add(rootNode8);
+        // rootNode7.add(rootNode8_1);
+        // List<List<String>> result_lc75_104 = Practice001_104.maxDepth_104_try01(rootNode);
+        TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(rootNode, 5);
+        // 結果確認
+        System.out.println(null != result_lc75_700_1 ? "true: " + result_lc75_700_1 : "false");
+
+
+
         /**
          * Binary Tree-DFS
          * Leet Code 104. Maximum Depth of Binary Tree. 
@@ -44,26 +85,26 @@ public class App {
          * input : [1,null,2]
          * output : 2
          */
-        Practice001_104 Practice001_104 = new Practice001_104();
-        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
-        DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
-        DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch2");
-        DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf1");
-        DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
-        DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
-        DefaultMutableTreeNode rootNode8_1 = new DefaultMutableTreeNode("leaf8_1");
+        // Practice001_104 Practice001_104 = new Practice001_104();
+        // DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root3");
+        // DefaultMutableTreeNode rootNode9 = new DefaultMutableTreeNode("branch9");
+        // DefaultMutableTreeNode rootNode20 = new DefaultMutableTreeNode("branch2");
+        // DefaultMutableTreeNode rootNode15 = new DefaultMutableTreeNode("leaf1");
+        // DefaultMutableTreeNode rootNode7 = new DefaultMutableTreeNode("leaf7");
+        // DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
+        // DefaultMutableTreeNode rootNode8_1 = new DefaultMutableTreeNode("leaf8_1");
 
-        rootNode.add(rootNode9);
-        rootNode.add(rootNode20);
+        // rootNode.add(rootNode9);
+        // rootNode.add(rootNode20);
 
-        rootNode20.add(rootNode15);
-        rootNode20.add(rootNode7);
+        // rootNode20.add(rootNode15);
+        // rootNode20.add(rootNode7);
         // rootNode7.add(rootNode8);
         // rootNode7.add(rootNode8_1);
         // List<List<String>> result_lc75_104 = Practice001_104.maxDepth_104_try01(rootNode);
-        int result_lc75_104_2 = Practice001_104.maxDepth_104_try02(rootNode);
+        // int result_lc75_104_2 = Practice001_104.maxDepth_104_try02(rootNode);
         // 結果確認
-        System.out.println(result_lc75_104_2 != 0 ? "true: " + result_lc75_104_2 : "false");
+        // System.out.println(result_lc75_104_2 != 0 ? "true: " + result_lc75_104_2 : "false");
 
         // TODO 後回し
         // DefaultTreeModel model = new DefaultTreeModel((TreeNode)rootNode, false);
