@@ -63,12 +63,9 @@ public class App {
         branchNode2.add(leafNode3);
         // rootNode7.add(rootNode8);
         // rootNode7.add(rootNode8_1);
-        // List<List<String>> result_lc75_104 = Practice001_104.maxDepth_104_try01(rootNode);
         TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(rootNode, 5);
         // 結果確認
         System.out.println(null != result_lc75_700_1 ? "true: " + result_lc75_700_1 : "false");
-
-
 
         /**
          * Binary Tree-DFS
