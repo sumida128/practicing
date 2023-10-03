@@ -11,16 +11,18 @@ import javax.swing.tree.TreeNode;
 
 /*
  * LeetCode 75 104. 二叉树的最大深度
- *  二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。
+ * 给定二叉搜索树（BST）的根节点 root 和一个整数值 val。
+ * 你需要在 BST 中找到节点值等于 val 的节点。
+ * 返回以该节点为根的子树。 如果节点不存在，则返回 null 。。
  *  
  * 示例 1：
- * 输入: 给定二叉树: [3,9,20,null,null,15,7]
- *         3        1 depth
+ * 输入: 给定二叉树: [4,2,7,1,3] [2]
+ *         4        1 depth
  *        / \
- *       9  20      2 depth
- *         /  \
- *        15   7    3 depth
- * 输出: 3 （最长路径上的节点数）
+ *       2   7      2 depth
+ *      / \
+ *     1   3        3 depth
+ * 输出: [2, 1, 3] （最长路径上的节点数）
  */
 public class Practice001_700 {
 
@@ -46,19 +48,33 @@ public class Practice001_700 {
         
         
         // 入力確認、最後leafなら、「1」を返却
-        if (null == root) {
-            return null;
-        } 
-        
-        //今のブランチを確認
-        System.out.println("今のブランチ" + root.toString());
-        if (root.isLeaf()) {
+        if (null == root || root.isLeaf()) {
             return null;
         }
 
+       String rootStr =root.toString().substring(root.toString().length() -1);
+       int rootInt  = Integer.parseInt(rootStr);
+
+       TreeNode leftBranch = root.getChildAt(0);
+       String leftBranchStr =leftBranch.toString().substring(leftBranch.toString().length() -1);
+       int leftBranchInt  = Integer.parseInt(leftBranchStr);
+       TreeNode rightBranch = root.getChildAt(1);
+       String rightBranchStr =rightBranch.toString().substring(rightBranch.toString().length() -1);
+       int rightBranchInt  = Integer.parseInt(rightBranchStr);
+        
+        //今のブランチを確認
+        System.out.println("今のブランチ" + root.toString());
+        if (rootInt >  val) {
+            return searchBST_700_try01(leftBranch, val);
+        }
+
+        if (rootInt < val) {
+            return searchBST_700_try01(rightBranch, val);
+        }
+
         // 大きい方を取得
-        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root");;
-        return rootNode ;
+        // DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root");;
+        return root ;
     }
 
     /*

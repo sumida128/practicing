@@ -29,7 +29,6 @@ public class App {
             args = new String[]{"",""};
         }
 
-
         /**
          * Binary Tree-DFS
          * Leet Code 700. Search in a Binary Search Tree 
@@ -44,8 +43,7 @@ public class App {
          * Ex.2
          * input : root = [4,2,7,1,3], val = 5
          * output : []
-         */
-        
+         */ 
         Practice001_700 practice001_700 = new Practice001_700();
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root4");
         DefaultMutableTreeNode branchNode2 = new DefaultMutableTreeNode("branch2");
@@ -53,17 +51,24 @@ public class App {
         //TODO
         DefaultMutableTreeNode leafNode1 = new DefaultMutableTreeNode("leaf1");
         DefaultMutableTreeNode leafNode3 = new DefaultMutableTreeNode("leaf3");
-        // DefaultMutableTreeNode rootNode8 = new DefaultMutableTreeNode("leaf8");
-        // DefaultMutableTreeNode rootNode8_1 = new DefaultMutableTreeNode("leaf8_1");
-
-        rootNode.add(branchNode2);
+        DefaultMutableTreeNode leafNode5 = new DefaultMutableTreeNode("leaf5");
+        DefaultMutableTreeNode leafNode6 = new DefaultMutableTreeNode("leaf6");
+        // branch
         rootNode.add(branchNode7);
-
+        rootNode.add(branchNode2);
+        // //TODO 左枝小は正解まらえる
+        // rootNode.add(branchNode2);
+        // rootNode.add(branchNode7);
+        // leaf
         branchNode2.add(leafNode1);
         branchNode2.add(leafNode3);
-        // rootNode7.add(rootNode8);
-        // rootNode7.add(rootNode8_1);
-        TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(rootNode, 5);
+
+        // leafNode3.add(leafNode5);
+        // leafNode3.add(leafNode6);
+
+
+        TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(
+            rootNode, 2);
         // 結果確認
         System.out.println(null != result_lc75_700_1 ? "true: " + result_lc75_700_1 : "false");
 
