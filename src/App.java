@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
 import leetCode75.easy.Practice001_104;
+import leetCode75.easy.Practice001_374;
 import leetCode75.easy.Practice001_700;
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
@@ -28,6 +29,26 @@ public class App {
         if (args.length == 0) {
             args = new String[]{"",""};
         }
+        /**
+         * Binary Search
+         * Leet Code 374. Guess Number Higher or Lower
+         * We are playing the Guess Game. The game is as follows:
+         * I pick a number from 1 to n. You have to guess which number I picked.
+         * Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.
+         * You call a pre-defined API int guess(int num), which returns three possible results:
+         * 
+         * Example 1:
+         * Input: n = 10, pick = 6
+         * Output: 6
+         * 
+         * Example 2:
+         * Input: n = 1, pick = 1
+         * Output: 1
+         */
+        Practice001_374 practice001_374 = new Practice001_374();
+        int result_lc75_374 = practice001_374.guessNumber_374_try01(10, 6);
+        System.out.println(result_lc75_374);
+
 
         /**
          * Binary Tree-DFS
@@ -44,33 +65,29 @@ public class App {
          * input : root = [4,2,7,1,3], val = 5
          * output : []
          */ 
-        Practice001_700 practice001_700 = new Practice001_700();
-        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root4");
-        DefaultMutableTreeNode branchNode2 = new DefaultMutableTreeNode("branch2");
-        DefaultMutableTreeNode branchNode7 = new DefaultMutableTreeNode("branch7");
-        //TODO
-        DefaultMutableTreeNode leafNode1 = new DefaultMutableTreeNode("leaf1");
-        DefaultMutableTreeNode leafNode3 = new DefaultMutableTreeNode("leaf3");
-        DefaultMutableTreeNode leafNode5 = new DefaultMutableTreeNode("leaf5");
-        DefaultMutableTreeNode leafNode6 = new DefaultMutableTreeNode("leaf6");
-        // branch
-        rootNode.add(branchNode7);
-        rootNode.add(branchNode2);
-        // //TODO 左枝小は正解まらえる
+        // Practice001_700 practice001_700 = new Practice001_700();
+        // DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root4");
+        // DefaultMutableTreeNode branchNode2 = new DefaultMutableTreeNode("branch2");
+        // DefaultMutableTreeNode branchNode7 = new DefaultMutableTreeNode("branch7");
+        // //TODO
+        // DefaultMutableTreeNode leafNode1 = new DefaultMutableTreeNode("leaf1");
+        // DefaultMutableTreeNode leafNode3 = new DefaultMutableTreeNode("leaf3");
+        // DefaultMutableTreeNode leafNode5 = new DefaultMutableTreeNode("leaf5");
+        // DefaultMutableTreeNode leafNode6 = new DefaultMutableTreeNode("leaf6");
+        // // branch
         // rootNode.add(branchNode2);
         // rootNode.add(branchNode7);
-        // leaf
-        branchNode2.add(leafNode1);
-        branchNode2.add(leafNode3);
 
-        // leafNode3.add(leafNode5);
-        // leafNode3.add(leafNode6);
+        // // leaf
+        // branchNode2.add(leafNode1);
+        // branchNode2.add(leafNode3);
+        // // leafNode3.add(leafNode5);
+        // // leafNode3.add(leafNode6);
 
-
-        TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(
-            rootNode, 2);
-        // 結果確認
-        System.out.println(null != result_lc75_700_1 ? "true: " + result_lc75_700_1 : "false");
+        // TreeNode result_lc75_700_1 = practice001_700.searchBST_700_try01(
+        //     rootNode, 2);
+        // // 結果確認
+        // System.out.println(null != result_lc75_700_1 ? "true: " + result_lc75_700_1 : "false");
 
         /**
          * Binary Tree-DFS
