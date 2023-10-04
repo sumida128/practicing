@@ -11,6 +11,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
 import leetCode75.easy.Practice001_104;
+import leetCode75.easy.Practice001_1173;
 import leetCode75.easy.Practice001_374;
 import leetCode75.easy.Practice001_700;
 import sp.easy.Practice001_03;
@@ -29,6 +30,30 @@ public class App {
         if (args.length == 0) {
             args = new String[]{"",""};
         }
+
+        /**
+         * DP - 1D
+         * Leet Code 1137. N-th Tribonacci Number
+
+         * The Tribonacci sequence Tn is defined as follows:
+         * T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
+         * Given n, return the value of Tn.
+         * 
+         * Example 1:
+         * Input: n = 4
+         * Output: 4
+         * Explanation:
+         * T_3 = 0 + 1 + 1 = 2
+         * T_4 = 1 + 1 + 2 = 4
+         * 
+         * Example 2:
+         * Input: n = 25
+         * Output: 1389537
+         */
+        Practice001_1173 practice001_1173 = new Practice001_1173();
+        int result_lc75_1173 = practice001_1173.tribonacci_1173_try01(4);
+        System.out.println("result_lc75_1173 : " + result_lc75_1173);
+
         /**
          * Binary Search
          * Leet Code 374. Guess Number Higher or Lower
@@ -47,7 +72,7 @@ public class App {
          */
         Practice001_374 practice001_374 = new Practice001_374();
         int result_lc75_374 = practice001_374.guessNumber_374_try01(10, 6);
-        System.out.println(result_lc75_374);
+        System.out.println("result_lc75_374" + result_lc75_374);
 
 
         /**
