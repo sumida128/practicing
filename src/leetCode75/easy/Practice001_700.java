@@ -38,30 +38,43 @@ public class Practice001_700 {
 	}
 
     /**
-     * Recursionを使う
+     * Binary Search Tree
+     * 特別なところ：左枝と右枝
+     * 左枝：必ず親枝によって小
+     * 右枝：必ず親枝によって大きい
      * 
      * @param matrix
      * @return
      * @throws Exception
      */
     public TreeNode searchBST_700_try01(TreeNode root, int val) {
-        
-        
-        // 入力確認、最後leafなら、「1」を返却
+
+        // 入力確認、最後leafなら子供がないので、「null」を返却
         if (null == root || root.isLeaf()) {
             return null;
         }
 
-       String rootStr =root.toString().substring(root.toString().length() -1);
-       int rootInt  = Integer.parseInt(rootStr);
+        // TreeNodeから値を文字化して枝番を取得する
+        String rootStr =root.toString().substring(root.toString().length() -1);
+        // 文字の枝番を取得して数字化に転換する
+        int rootInt  = Integer.parseInt(rootStr);
 
-       TreeNode leftBranch = root.getChildAt(0);
-       String leftBranchStr =leftBranch.toString().substring(leftBranch.toString().length() -1);
-       int leftBranchInt  = Integer.parseInt(leftBranchStr);
-       TreeNode rightBranch = root.getChildAt(1);
-       String rightBranchStr =rightBranch.toString().substring(rightBranch.toString().length() -1);
-       int rightBranchInt  = Integer.parseInt(rightBranchStr);
+        //余計なソース
+        // TreeNodeの子供を取得
+        TreeNode leftBranch = root.getChildAt(0);
+        // TreeNodeから値を文字化して枝番を取得する
+        String leftBranchStr =leftBranch.toString().substring(leftBranch.toString().length() -1);
+        // 文字の枝番を取得して数字化に転換する
+        int leftBranchInt  = Integer.parseInt(leftBranchStr);
         
+        // TreeNodeの子供を取得
+        TreeNode rightBranch = root.getChildAt(1);
+        // TreeNodeから値を文字化して枝番を取得する
+        String rightBranchStr =rightBranch.toString().substring(rightBranch.toString().length() -1);
+        // 文字の枝番を取得して数字化に転換する
+        int rightBranchInt  = Integer.parseInt(rightBranchStr);
+        //余計なソース
+
         //今のブランチを確認
         System.out.println("今のブランチ" + root.toString());
         if (rootInt >  val) {
@@ -72,8 +85,7 @@ public class Practice001_700 {
             return searchBST_700_try01(rightBranch, val);
         }
 
-        // 大きい方を取得
-        // DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode("root");;
+        // rootInt == val の場合
         return root ;
     }
 
