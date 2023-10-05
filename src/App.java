@@ -14,6 +14,7 @@ import leetCode75.easy.Practice001_104;
 import leetCode75.easy.Practice001_1173;
 import leetCode75.easy.Practice001_374;
 import leetCode75.easy.Practice001_700;
+import leetCode75.easy.Practice001_746;
 import sp.easy.Practice001_03;
 import sp.easy.Practice001_05;
 import sp.easy.Practice001_18;
@@ -31,35 +32,40 @@ public class App {
             args = new String[]{"",""};
         }
 
-
         /**
-         * DP - 1D
-         * Leet Code 1137. N-th Tribonacci Number
-
-         * The Tribonacci sequence Tn is defined as follows:
-         * T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
-         * Given n, return the value of Tn.
-         *  ※sequence ＝順序
-         *    defined  ＝定義済み
-         *    Tribonacci＝トリボナッチ
+         * DP - 1D Easy
+         * LeetCode75 746. Min Cost Climbing Stairs
+         * You are given an integer array cost where cost[i] is the cost of ith step on a staircase.
+         * Once you pay the cost, you can either climb one or two steps.
+         * You can either start from the step with index 0, or the step with index 1.
+         * Return the minimum cost to reach the top of the floor.
+         * 
          * Example 1:
-         * Input: n = 4
-         * Output: 4
-         * Explanation:
-         * T_3 = 0 + 1 + 1 = 2
-         * T_4 = 1 + 1 + 2 = 4
+         * Input: cost = [10,15,20]
+         * Output: 15
+         * Explanation: You will start at index 1.
+         * - Pay 15 and climb two steps to reach the top.
+         * The total cost is 15.
          * 
          * Example 2:
-         * Input: n = 25
-         * Output: 1389537
+         * Input: cost = [1,100,1,1,1,100,1,1,100,1]
+         * Output: 6
+         * Explanation: You will start at index 0.
+         * - Pay 1 and climb two steps to reach index 2.
+         * - Pay 1 and climb two steps to reach index 4.
+         * - Pay 1 and climb two steps to reach index 6.
+         * - Pay 1 and climb one step to reach index 7.
+         * - Pay 1 and climb two steps to reach index 9.
+         * - Pay 1 and climb one step to reach the top.
+         * The total cost is 6.
          */
-        Practice001_1173 practice001_746 = new Practice001_1173();
-        int result_lc75_746 = practice001_746.tribonacci_1173_try01(4);
+        Practice001_746 practice001_746 = new Practice001_746();
+        int result_lc75_746 = practice001_746.minCostClimbingStairs_746_try01(new int[]{10,15,20});
         System.out.println("result_lc75_746 : " + result_lc75_746);
 
         /**
-         * DP - 1D
-         * Leet Code 1137. N-th Tribonacci Number
+         * DP - 1D Easy
+         * LeetCode75 1137. N-th Tribonacci Number
 
          * The Tribonacci sequence Tn is defined as follows:
          * T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
@@ -84,7 +90,7 @@ public class App {
 
         /**
          * Binary Search
-         * Leet Code 374. Guess Number Higher or Lower
+         * LeetCode75 374. Guess Number Higher or Lower
          * We are playing the Guess Game. The game is as follows:
          * I pick a number from 1 to n. You have to guess which number I picked.
          * Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.
@@ -105,7 +111,7 @@ public class App {
 
         /**
          * Binary Tree-DFS
-         * Leet Code 700. Search in a Binary Search Tree 
+         * LeetCode75 700. Search in a Binary Search Tree 
          * You are given the root of a binary search tree (BST) and an integer val.
          * Find the node in the BST that the node's value equals val and
          * return the subtree rooted with that node. If such a node does not exist, return null.
@@ -144,7 +150,7 @@ public class App {
 
         /**
          * Binary Tree-DFS
-         * Leet Code 104. Maximum Depth of Binary Tree. 
+         * LeetCode75 104. Maximum Depth of Binary Tree. 
          * Given the root of a binary tree, return its maximum depth.
          * A binary tree's maximum depth is the number of nodes along the longest path from the
          * root node down to the farthest leaf node.
