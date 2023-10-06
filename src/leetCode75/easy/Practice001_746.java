@@ -49,27 +49,134 @@ public class Practice001_746 {
 	}
 
     /**
-     * 
+     * ベスト方法（try03は標準方法）
      * @param 配列 cost
      * @return
      */
     public int minCostClimbingStairs_746_try01(int[] cost) {
 
-        // 両端を定義
-        int left = 1;
-        int rigth = 2;
-        int count = 1;
+        // 0 地面、状況は 5つがありますが
+        // 10    15     20   = （n）OK
+        // ▲0  > ▲1  >  ▲2   =  45 ◆
+        // ▲0  > ▲1  >       =  25 ◇
+        // ▲0  >     >  ▲2   =  30 ◆
+        //     > ▲1  >  ▲2   =  35 ◆
+        //     > ▲1  >       =  15 ◇
 
-        while (left <= rigth ) {
+        // OKにに到着のは2つです
+        // ▲1=>直接行く ▲2=>から行く
+        // n - 1 || n - 2 => n
+        // よりやすいのほうを選ぶ
+        // Math.min(n - 1 , n - 2);
 
-
-            count++;
+        int length = cost.length;
+        // int[] dp = new int[length];
+        // 初期値を設定する
+        // dp[0] = cost[0];
+        // dp[1] = cost[1];
+        // int minCost = 0;
+        for(int i = 2; i < length; i++) {
+            int D1 = cost[i - 1];
+            int D2 = cost[i - 2];
+            // int cost_D = cost[i];
+            // dp[i] += Math.min(D1, D2) + cost_D;
+            // minCost += Math.min(D1, D2);
+            cost[i] += Math.min(D1, D2);
         }
-        System.out.println("実行回数：" + count);
 
-        return 0 ;
+        return Math.min(cost[length - 1] , cost[length - 2]);
+        // return minCost;
     }
-	
+
+    /**
+     * 自分思い出す方法（よくない）
+     * @param 配列 cost
+     * @return
+     */
+    public int minCostClimbingStairs_746_try02(int[] cost) {
+
+        // 0 地面へ状況は三つがあります
+        //             前の階のコストを持つ
+        // 0 < 1 < 2 < 3
+        // 0 <   < 2 < 3
+        // 0 < 1 <   < 3
+
+        // n - 1 || n - 2 => n
+        // よりやすいのほうを選ぶ
+        // Math.min(n - 1 , n - 2);
+
+        int length = cost.length;
+        //  コストの累計
+        int minCost = 0;
+        //後ろから降りる
+        for(int i = length - 1; i >= 2; i--) {
+
+            //コストを取る
+            int D1 = cost[i];
+            int D2 = cost[i - 1];
+
+            //比較
+            if(D1 == D2) {
+                minCost = D1 + minCost;
+
+            //2は小の場合、も一歩減算
+            } else if(D1 > D2) {
+                if(i > 1) {
+                    i--;
+                }
+                minCost = D2 + minCost;
+
+            } else if(D1 < D2) {
+
+                minCost = D1 + minCost;
+            }
+        }
+
+        return minCost;
+    }
+
+    public int minCostClimbingStairs_746_try03(int[] cost) {
+
+        // 0 地面、状況は 5つがありますが
+        // 10    15     20   = （n）OK
+        // ▲0  > ▲1  >  ▲2   =  45 ◆
+        // ▲0  > ▲1  >       =  25 ◇
+        // ▲0  >     >  ▲2   =  30 ◆
+        //     > ▲1  >  ▲2   =  35 ◆
+        //     > ▲1  >       =  15 ◇
+
+        // まとめてOKに到着のは2つです
+        // ▲1=>直接行く ▲2=>から行く
+        // n - 1 || n - 2 => n
+        // よりやすいのほうを選ぶ
+        // Math.min(n - 1 , n - 2);
+
+        // ▲0はコスト、cost 加算しないと行けまい
+        // Math.min(n - 1 , n - 2) + cost
+
+        int length = cost.length;
+        // 消費したコストを累計
+        int[] dp = new int[length];
+        // 初期値を設定する
+        dp[0] = cost[0];
+        dp[1] = cost[1];
+        // int minCost = 0;
+        for(int i = 2; i < length; i++) {
+            int D1 = dp[i - 1];
+            int D2 = dp[i - 2];
+            // 間違ったところは累積してない
+            // int D1 = cost[i - 1];
+            // int D2 = cost[i - 2];
+            int cost_D = cost[i];
+            dp[i] = Math.min(D1, D2) + cost_D;
+            // minCost += Math.min(D1, D2);
+            // cost[i] += Math.min(D1, D2);
+        }
+
+        return Math.min(dp[length - 1] , dp[length - 2]);
+        // return minCost;
+    }
+
     /**
      * 
      * @param 範囲 n, 予想値 pick

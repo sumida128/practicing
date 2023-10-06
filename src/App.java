@@ -60,8 +60,13 @@ public class App {
          * The total cost is 6.
          */
         Practice001_746 practice001_746 = new Practice001_746();
-        int result_lc75_746 = practice001_746.minCostClimbingStairs_746_try01(new int[]{10,15,20});
+        int result_lc75_746 = practice001_746
+            .minCostClimbingStairs_746_try02(new int[]{10,15,20});
         System.out.println("result_lc75_746 : " + result_lc75_746);
+        int result_lc75_746_2 = practice001_746
+            // .minCostClimbingStairs_746_try01(new int[]{1,100,1,1,1,100,1,1,100,1});
+            .minCostClimbingStairs_746_try02(new int[]{1,100,1,1,1,100,1,1,100,1});
+        System.out.println("result_lc75_746_2 : " + result_lc75_746_2);
 
         /**
          * DP - 1D Easy
@@ -84,9 +89,9 @@ public class App {
          * Input: n = 25
          * Output: 1389537
          */
-        Practice001_1173 practice001_1173 = new Practice001_1173();
-        int result_lc75_1173 = practice001_1173.tribonacci_1173_try01(4);
-        System.out.println("result_lc75_1173 : " + result_lc75_1173);
+        // Practice001_1173 practice001_1173 = new Practice001_1173();
+        // int result_lc75_1173 = practice001_1173.tribonacci_1173_try01(4);
+        // System.out.println("result_lc75_1173 : " + result_lc75_1173);
 
         /**
          * Binary Search
@@ -103,10 +108,10 @@ public class App {
          * Example 2:
          * Input: n = 1, pick = 1
          * Output: 1
-         */
-        Practice001_374 practice001_374 = new Practice001_374();
-        int result_lc75_374 = practice001_374.guessNumber_374_try01(10, 6);
-        System.out.println("result_lc75_374" + result_lc75_374);
+        //  */
+        // Practice001_374 practice001_374 = new Practice001_374();
+        // int result_lc75_374 = practice001_374.guessNumber_374_try01(10, 6);
+        // System.out.println("result_lc75_374" + result_lc75_374);
 
 
         /**
