@@ -12,6 +12,7 @@ import javax.swing.tree.TreeNode;
 
 import leetCode75.easy.Practice001_104;
 import leetCode75.easy.Practice001_1173;
+import leetCode75.easy.Practice001_338;
 import leetCode75.easy.Practice001_374;
 import leetCode75.easy.Practice001_700;
 import leetCode75.easy.Practice001_746;
@@ -25,12 +26,68 @@ import sp.easy.Practice001_32;
  * https://leetcode.cn/studyplan/coding-interviews/
  */
 public class App {
+
+    // // 処理前の時刻を取得
+    // long startTime = System.nanoTime();
+    // // 処理後の時刻を取得
+    // long endTime = System.nanoTime();
+
+    public static void timeCheck(String str, long startTime, long endTime) {
+
+        System.out.println(str);
+        System.out.println("開始時刻：" + startTime + " nano/s");
+        System.out.println("終了時刻：" + endTime + " nano/s");
+        System.out.println("処理時間：" + (endTime - startTime) + " nano/s");
+    }
+
+    public static void printer(int[] in) {
+
+        System.out.print( "Result printer:[");
+        for(int s : in) {
+            
+            System.out.print(s + " ,");
+        }
+        System.out.println( "]" );
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("To start practice. ");
-
         if (args.length == 0) {
             args = new String[]{"",""};
         }
+        /**
+         * Bit Manipulation - 1D Easy
+         * LeetCode75 338. Counting Bits
+         * 
+         * Example 1:
+         * Input: n = 2
+         * Output: [0,1,1]
+         * Explanation: 0 --> 0
+         *              1 --> 1
+         *              2 --> 10
+         * Example 2:
+         * Input:  n = 5
+         * Output: [0,1,1,2,1,2]
+         * Explanation: 0 --> 0
+         *              1 --> 1
+         *              2 --> 10
+         *              3 --> 11
+         *              4 --> 100
+         *              5 --> 101
+         */
+        long startTime = 0;
+        Practice001_338 practice001_338 = new Practice001_338();
+        startTime = System.nanoTime();
+        int[] result_lc75_338 = practice001_338
+            .countBits_338_try01(5);
+        App.timeCheck("result_lc75_338 : ", startTime, System.nanoTime());
+        App.printer(result_lc75_338);
+
+        startTime = System.nanoTime();
+        int[] result_lc75_338_2 = practice001_338
+            .countBits_338_try02(5);
+        App.timeCheck("result_lc75_338_2 : ", startTime, System.nanoTime());
+        App.printer(result_lc75_338_2);
 
         /**
          * DP - 1D Easy
@@ -59,15 +116,16 @@ public class App {
          * - Pay 1 and climb one step to reach the top.
          * The total cost is 6.
          */
-        Practice001_746 practice001_746 = new Practice001_746();
-        int result_lc75_746 = practice001_746
-            .minCostClimbingStairs_746_try02(new int[]{10,15,20});
-        System.out.println("result_lc75_746 : " + result_lc75_746);
-        int result_lc75_746_2 = practice001_746
-            // .minCostClimbingStairs_746_try01(new int[]{1,100,1,1,1,100,1,1,100,1});
-            .minCostClimbingStairs_746_try02(new int[]{1,100,1,1,1,100,1,1,100,1});
-        System.out.println("result_lc75_746_2 : " + result_lc75_746_2);
+        // Practice001_746 practice001_746 = new Practice001_746();
+        // int result_lc75_746 = practice001_746
+        //     .minCostClimbingStairs_746_try02(new int[]{10,15,20});
+        // System.out.println("result_lc75_746 : " + result_lc75_746);
+        // int result_lc75_746_2 = practice001_746
+        //     // .minCostClimbingStairs_746_try01(new int[]{1,100,1,1,1,100,1,1,100,1});
+        //     .minCostClimbingStairs_746_try02(new int[]{1,100,1,1,1,100,1,1,100,1});
+        // System.out.println("result_lc75_746_2 : " + result_lc75_746_2);
 
+        // TODO
         /**
          * DP - 1D Easy
          * LeetCode75 1137. N-th Tribonacci Number

@@ -11,7 +11,6 @@ import javax.swing.tree.TreeNode;
 /*
  * LeetCode 75 1137. 第 N 个泰波那契数
  * 泰波那契序列 Tn 定义如下：
- * 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。
  * T0 = 0, T1 = 1, T2 = 1, 且在 n >= 0 的条件下 Tn+3 = Tn + Tn+1 + Tn+2
  * 
  * 示例 1：
@@ -46,17 +45,7 @@ public class Practice001_1173 {
      */
     public int tribonacci_1173_try01(int n) {
 
-        // 両端を定義
-        int left = 1;
-        int rigth = n;
-        int count = 1;
-
-        while (left <= rigth ) {
-
-
-            count++;
-        }
-        System.out.println("実行回数：" + count);
+        // TODO
 
         return 0 ;
     }
