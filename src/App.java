@@ -12,6 +12,7 @@ import javax.swing.tree.TreeNode;
 
 import leetCode75.easy.Practice001_104;
 import leetCode75.easy.Practice001_1173;
+import leetCode75.easy.Practice001_136;
 import leetCode75.easy.Practice001_338;
 import leetCode75.easy.Practice001_374;
 import leetCode75.easy.Practice001_700;
@@ -55,8 +56,70 @@ public class App {
         if (args.length == 0) {
             args = new String[]{"",""};
         }
+
         /**
-         * Bit Manipulation - 1D Easy
+         * DP - 1D Easy
+         * LeetCode75 136. Single Number - 1D Easy
+         * Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+         * You must implement a solution with a linear runtime complexity and use only constant extra space.          * 
+         * Example 1:
+         * Input: nums = [2,2,1]
+         * Output: 1
+         * 
+         * Example 2:
+         * Input: nums = [4,1,2,1,2]
+         * Output: 4
+         * 
+         * Example 3:
+         * Input: nums = [1]
+         * Output: 1
+         */
+        long startTime_136 = 0;
+        Practice001_136 practice001_136 = new Practice001_136();
+        startTime_136 = System.nanoTime();
+        int[] result_lc75_163 = new int[]{practice001_136
+            .singleNumber_try01(new int[]{2,2,1})};
+        App.timeCheck("tribonacci_1173_try01 : ", startTime_136, System.nanoTime());
+        App.printer(result_lc75_163);
+
+        startTime_136 = System.nanoTime();
+        int[] result_lc75_163_2 = new int[]{practice001_136
+            .singleNumber_try01(new int[]{4,1,2,1,2})};
+        App.timeCheck("result_lc75_1173_2 : ", startTime_136, System.nanoTime());
+        App.printer(result_lc75_163_2);
+
+        /**
+         * DP - 1D Easy
+         * LeetCode75 1137. N-th Tribonacci Number - 1D Easy
+         * 
+         * Example 1:
+         * Input: n = 4
+         * Output: 4
+         * Explanation:
+         *   T_3 = 0 + 1 + 1 = 2
+         *   T_4 = 1 + 1 + 2 = 4
+         * 
+         * Example 2:
+         * Input: n = 25
+         * Output: 1389537
+         */
+        // long startTime_1173 = 0;
+        // Practice001_1173 practice001_1173 = new Practice001_1173();
+        // startTime_1173 = System.nanoTime();
+        // int[] result_lc75_1173 = new int[]{practice001_1173
+        //     .tribonacci_1173_try01(4)};
+        // App.timeCheck("tribonacci_1173_try01 : ", startTime_1173, System.nanoTime());
+        // App.printer(result_lc75_1173);
+
+        // startTime_1173 = System.nanoTime();
+        // int[] result_lc75_1173_2 = new int[]{practice001_1173
+        //     .tribonacci_1173_try01(25)};
+        // App.timeCheck("result_lc75_1173_2 : ", startTime_1173, System.nanoTime());
+        // App.printer(result_lc75_1173_2);
+
+        /**
+         * DP - 1D Easy
+         * LeetCode75 338.Bit Manipulation - 1D Easy
          * LeetCode75 338. Counting Bits
          * 
          * Example 1:
@@ -75,19 +138,19 @@ public class App {
          *              4 --> 100
          *              5 --> 101
          */
-        long startTime = 0;
-        Practice001_338 practice001_338 = new Practice001_338();
-        startTime = System.nanoTime();
-        int[] result_lc75_338 = practice001_338
-            .countBits_338_try01(5);
-        App.timeCheck("result_lc75_338 : ", startTime, System.nanoTime());
-        App.printer(result_lc75_338);
+        // long startTime = 0;
+        // Practice001_338 practice001_338 = new Practice001_338();
+        // startTime = System.nanoTime();
+        // int[] result_lc75_338 = practice001_338
+        //     .countBits_338_try01(13);
+        // App.timeCheck("result_lc75_338 : ", startTime, System.nanoTime());
+        // App.printer(result_lc75_338);
 
-        startTime = System.nanoTime();
-        int[] result_lc75_338_2 = practice001_338
-            .countBits_338_try02(5);
-        App.timeCheck("result_lc75_338_2 : ", startTime, System.nanoTime());
-        App.printer(result_lc75_338_2);
+        // startTime = System.nanoTime();
+        // int[] result_lc75_338_2 = practice001_338
+        //     .countBits_338_try02(14);
+        // App.timeCheck("result_lc75_338_2 : ", startTime, System.nanoTime());
+        // App.printer(result_lc75_338_2);
 
         /**
          * DP - 1D Easy
