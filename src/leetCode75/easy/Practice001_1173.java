@@ -8,6 +8,9 @@ import java.util.List;
 
 import javax.swing.tree.TreeNode;
 
+  // https://www.bilibili.com/video/BV1Sk4y1F7Hg/?spm_id_from=333.337.search-card.all.click&vd_source=1b25179b469396007411858e0ce802b3
+  // 泰波那契数 前3 總合
+  // 費波那契数 前2 總合（黃金比例）
 /*
  * LeetCode 75 1137. 第 N 个泰波那契数
  * 泰波那契序列 Tn 定义如下：
@@ -37,7 +40,6 @@ public class Practice001_1173 {
 		System.out.println("Run Practice001_1173.");
 	}
 
-	
     /**
      * 
      * @param 整数 n
@@ -46,8 +48,21 @@ public class Practice001_1173 {
     public int tribonacci_1173_try01(int n) {
 
         // TODO
+        int[] dp = new int[n + 1];
 
-        return 0 ;
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 1;
+
+        for (int i = 3; i <= n ; i++) {
+
+            dp[i] =  dp[i -1] + dp[i - 2]  + dp[i - 3];
+
+        }
+
+
+
+        return dp[n] ;
     }
 	
     /**
