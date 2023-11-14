@@ -8,9 +8,9 @@ import java.util.List;
 
 import javax.swing.tree.TreeNode;
 
-  // https://www.bilibili.com/video/BV1Sk4y1F7Hg/?spm_id_from=333.337.search-card.all.click&vd_source=1b25179b469396007411858e0ce802b3
-  // 泰波那契数 前3 總合
-  // 費波那契数 前2 總合（黃金比例）
+// https://www.bilibili.com/video/BV1Sk4y1F7Hg/?spm_id_from=333.337.search-card.all.click&vd_source=1b25179b469396007411858e0ce802b3
+// 泰波那契数 前3 總合
+// 費波那契数 前2 總合（黃金比例）
 /*
  * LeetCode 75 136. 只出现一次的数字
  * 给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
@@ -40,8 +40,8 @@ public class Practice001_136 {
     }
 
     public void runBefore(String[] param_1, String[] param_2) {
-		System.out.println("Run Practice001_136.");
-	}
+        System.out.println("Run Practice001_136.");
+    }
 
     /**
      * 
@@ -50,23 +50,14 @@ public class Practice001_136 {
      */
     public int singleNumber_try01(int[] n) {
 
-        // // TODO
-        // int[] dp = new int[n + 1];
+        for (int i = 1; i < n.length; i++) {
 
-        // dp[0] = 0;
-        // dp[1] = 1;
-        // dp[2] = 1;
+            // n[0] = n[0] ^ n[i];
+            n[0] ^=  n[i];
+            // n[0] = n[0] ^ n[i];
+        }
 
-        // for (int i = 3; i <= n ; i++) {
-
-        //     dp[i] =  dp[i -1] + dp[i - 2]  + dp[i - 3];
-
-        // }
-
-
-
-        // return dp[n] ;
-        return 0;
+        return n[0];
     }
 
 }

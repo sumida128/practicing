@@ -60,8 +60,10 @@ public class App {
         /**
          * DP - 1D Easy
          * LeetCode75 136. Single Number - 1D Easy
-         * Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
-         * You must implement a solution with a linear runtime complexity and use only constant extra space.          * 
+         * Given a non-empty array of integers nums,
+         *  every element appears twice except for one. Find that single one.
+         * You must implement a solution with a linear runtime complexity
+         *  and use only constant extra space.
          * Example 1:
          * Input: nums = [2,2,1]
          * Output: 1
@@ -78,7 +80,7 @@ public class App {
         Practice001_136 practice001_136 = new Practice001_136();
         startTime_136 = System.nanoTime();
         int[] result_lc75_163 = new int[]{practice001_136
-            .singleNumber_try01(new int[]{2,2,1})};
+            .singleNumber_try01(new int[]{2,2,3,1,5,1,5,3,4})};
         App.timeCheck("tribonacci_1173_try01 : ", startTime_136, System.nanoTime());
         App.printer(result_lc75_163);
 
