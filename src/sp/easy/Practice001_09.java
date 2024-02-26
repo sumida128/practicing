@@ -1,7 +1,5 @@
 package sp.easy;
 
-import java.util.ArrayList;
-
 /*
  * 剑指 Offer 18. 删除链表的节点
  *  用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，
