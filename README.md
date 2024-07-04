@@ -26,3 +26,6 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 [31道](./Medium.md)
 ## 1.3 Hard
 [6道](./Hard.md)
+
+# 全て
+[75問](./All.md)
